@@ -1,0 +1,78 @@
+:root {
+  /* Default Theme: Dark (matching the Hack Club aesthetic in the screenshot) */
+  --background: #170b11;
+  --foreground: #ffffff;
+  --card-background: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --primary-red: #ec3750;
+  --primary-red-hover: #d21c38;
+  --text-muted: #cbb4bc;
+  --accent-pink: #ff60b5;
+  --accent-purple: #9f7aea;
+  --accent-green: #48bb78;
+  --accent-blue: #4299e1;
+  --accent-yellow: #ecc94b;
+  --schematic-color: rgba(236, 55, 80, 0.06);
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --postcard-bg: #ffffff;
+  --postcard-fg: #170b11;
+  --input-bg: rgba(255, 255, 255, 0.07);
+  --input-border: rgba(255, 255, 255, 0.15);
+  --input-focus-border: #ec3750;
+  --nav-bg: rgba(23, 11, 17, 0.85);
+  --wavy-red: #ec3750;
+  --wavy-dark: #0c0508;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  color: var(--foreground);
+  background: var(--background);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-red);
+}
+
+/* Wavy transitions and SVG styles */
+.wavy-border {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-top: -1px;
+}
+

@@ -1,0 +1,49 @@
+.polaroid {
+  background-color: #ffffff;
+  padding: 3px;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  display: inline-block;
+  position: relative;
+  cursor: zoom-in;
+  transition: box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.polaroid:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background-color: #e5e5e5;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.polaroid:hover .image {
+  transform: scale(1.05);
+}
+
+
+/* Sticker Overlays */
+.sticker {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.polaroid:hover .sticker {
+  transform: scale(1.1) rotate(5deg);
+}

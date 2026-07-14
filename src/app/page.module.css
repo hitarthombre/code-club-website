@@ -1,0 +1,364 @@
+.pageContainer {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6.5rem 1rem 6rem 1rem;
+  z-index: 10;
+  
+  /* Use the background image */
+  background-image: linear-gradient(
+      rgba(23, 11, 17, 0.45),
+      rgba(23, 11, 17, 0.45)
+    ),
+    url('/photos/hero_background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Background schematic overlay placement */
+.bgWrapper {
+  display: none; /* Removed schematic overlay, now using bg image */
+}
+
+/* Main Hero Grid Layout - Flex centered, with absolute polaroid stack on the left */
+.heroGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1350px;
+  gap: 3.5rem;
+  z-index: 5;
+}
+
+.sideColumn {
+  position: absolute;
+  top: 100px;
+  left: 0; /* Sticks directly to the left screen edge */
+  width: 250px;
+  min-height: 1100px;
+  padding-left: 0;
+}
+
+.sideColumnRight {
+  position: absolute;
+  top: 100px;
+  right: 0; /* Sticks directly to the right screen edge */
+  width: 250px;
+  min-height: 1100px;
+  padding-right: 0;
+}
+
+/* Polaroid positioning wrappers */
+.polaroidWrapper {
+  width: 210px;
+  position: absolute;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+}
+
+.centerColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 0 1rem;
+  max-width: 750px;
+}
+
+/* Notice Badge */
+.noticeLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--foreground);
+  opacity: 0.9;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1.2rem;
+  border-radius: 9999px;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.noticeLink:hover {
+  transform: translateY(-2px);
+  background-color: rgba(236, 55, 80, 0.15);
+  opacity: 1;
+  border-color: var(--primary-red);
+}
+
+.sparkle {
+  color: var(--accent-yellow);
+}
+
+/* Hero Typography */
+.title {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 4.8rem;
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+  max-width: 650px;
+  letter-spacing: -0.02em;
+}
+
+/* Multi-colored teens word styling */
+.teens {
+  font-weight: 900;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.t_char { color: var(--accent-pink); }
+.e1_char { color: var(--accent-purple); }
+.e2_char { color: var(--accent-green); }
+.n_char { color: var(--accent-yellow); }
+.s_char { color: var(--accent-blue); }
+
+.subtitle {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 580px;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+
+/* Email Signup Form */
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 500px;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  width: 100%;
+  background-color: var(--input-bg);
+  border: 2px solid var(--input-border);
+  border-radius: 9999px;
+  padding: 0.35rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inputGroup:focus-within {
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 4px rgba(236, 55, 80, 0.2);
+}
+
+.emailInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 1.25rem;
+  outline: none;
+}
+
+.emailInput::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.joinBtn {
+  background-color: #ffffff;
+  color: #170b11;
+  border: none;
+  font-family: var(--font-title), sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.5rem 1.75rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.joinBtn:hover {
+  background-color: var(--primary-red);
+  color: #ffffff;
+  transform: scale(1.02);
+}
+
+.termsText {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.termsLink {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.termsLink:hover {
+  color: var(--primary-red);
+}
+
+/* Success Message */
+.successMessage {
+  font-family: var(--font-title), sans-serif;
+  font-size: 1.1rem;
+  color: var(--accent-green);
+  font-weight: 700;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  background-color: rgba(72, 187, 120, 0.1);
+  border-radius: 9999px;
+  border: 1px dashed var(--accent-green);
+  margin-bottom: 2.5rem;
+}
+
+/* Bottom Wavy transition section */
+.waveContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 8;
+  pointer-events: none;
+}
+
+.waveSvg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.redWave {
+  fill: var(--wavy-red);
+}
+
+.darkWave {
+  fill: var(--wavy-dark);
+}
+
+/* Crawling Mascot Raccoon overlay */
+.mascotContainer {
+  position: absolute;
+  bottom: 0; /* Sticked on the bottom of the hero section */
+  left: 6%; /* Moved to left side */
+  right: auto;
+  width: 130px;
+  height: 110px;
+  z-index: 9; /* Behind polaroids which start at z-index: 10 */
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mascotContainer:hover {
+  transform: translateY(-20px) rotate(5deg) scale(1.08);
+}
+
+.mascotImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.universityLogo {
+  max-height: 75px;
+  width: auto;
+  margin-top: 1.5rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2)) brightness(1.05);
+  transition: transform 0.2s ease, filter 0.2s ease;
+  cursor: pointer;
+}
+
+.universityLogo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 6px 12px rgba(236, 55, 80, 0.35)) brightness(1.1);
+}
+
+
+/* Responsive Overrides */
+@media (max-width: 1200px) {
+  .title {
+    font-size: 4rem;
+  }
+  .heroGrid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .heroGrid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+  .centerColumn {
+    order: 1;
+    align-items: center;
+    text-align: center;
+  }
+  .signupForm {
+    align-items: center;
+  }
+  .sideColumn, .sideColumnRight {
+    display: none !important; /* Hide image collages in mobile view */
+  }
+  .title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 2.6rem;
+  }
+  .subtitle {
+    font-size: 1.05rem;
+  }
+  .inputGroup {
+    flex-direction: column;
+    border-radius: 16px;
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+  .joinBtn {
+    width: 100%;
+  }
+  .mascotContainer {
+    width: 90px;
+    right: 4%;
+  }
+  .waveContainer {
+    height: 60px;
+  }
+}

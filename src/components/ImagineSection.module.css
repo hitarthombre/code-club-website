@@ -1,0 +1,225 @@
+.section {
+  position: relative;
+  background-color: var(--wavy-dark);
+  color: #ffffff;
+  padding: 5rem 4rem 6rem 4rem;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.header {
+  max-width: 800px;
+  margin-bottom: 3.5rem;
+}
+
+.title {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.highlight {
+  color: var(--primary-red);
+}
+
+.subtitle {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  opacity: 0.95;
+  line-height: 1.5;
+}
+
+/* Infinite Scrolling Marquee Container - stretches edge to edge (100vw) */
+.marqueeContainer {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  padding: 1.5rem 0;
+}
+
+.track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: scrollMarquee 35s linear infinite;
+}
+
+/* Pause marquee on hover */
+.track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Scroll exactly half of the doubled list */
+  }
+}
+
+/* Card Styling - Flush top image, dark padding content */
+.card {
+  flex: 0 0 290px; /* Fixed card width */
+  background-color: #171114; /* Dark solid charcoal background matching screenshot */
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+}
+
+.cardImageContainer {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.05);
+}
+
+/* Internal padding area for text and footer */
+.cardContent {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.cardBody {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #cbc3c6; /* Muted warm gray text */
+  margin-bottom: 1.5rem;
+}
+
+.bold {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Removed border-top line for clean seamless look */
+  padding-top: 0.2rem;
+}
+
+.link {
+  color: var(--primary-red);
+  font-family: var(--font-title), sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.card:hover .link {
+  color: #ff60b5;
+}
+
+.arrowIcon {
+  width: 0.95rem;
+  height: 0.95rem;
+  transition: transform 0.2s ease;
+}
+
+.card:hover .arrowIcon {
+  transform: translateX(4px);
+}
+
+.iconRight {
+  width: 1rem;
+  height: 1rem;
+  color: rgba(255, 255, 255, 0.25);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover .iconRight {
+  color: var(--primary-red);
+  transform: rotate(15deg);
+}
+
+/* Mascot circular peeking sticker */
+.mascotSticker {
+  position: absolute;
+  top: -45px;
+  right: -45px;
+  width: 130px;
+  height: 130px;
+  background-color: var(--primary-red);
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 15;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 0 22px 22px;
+  overflow: hidden;
+}
+
+.paws {
+  width: 60px;
+  height: 60px;
+  fill: #ffffff;
+  transform: rotate(-15deg);
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 4rem 2rem 5rem 2rem;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding: 4rem 1.5rem 4rem 1.5rem;
+  }
+  .card {
+    flex: 0 0 260px;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+  .mascotSticker {
+    width: 100px;
+    height: 100px;
+    top: -35px;
+    right: -35px;
+    padding: 0 0 18px 18px;
+  }
+  .paws {
+    width: 45px;
+    height: 45px;
+  }
+}
