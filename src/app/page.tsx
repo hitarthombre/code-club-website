@@ -8,6 +8,7 @@ import ImagineSection from "@/components/ImagineSection";
 import UpcomingEvents from "@/components/UpcomingEvents";
 import ImageGallery from "@/components/ImageGallery";
 import TechSection from "@/components/TechSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -226,6 +227,7 @@ export default function Home() {
       <UpcomingEvents />
       <ImageGallery />
       <TechSection />
+      <Footer />
     </div>
   );
 }

@@ -32,7 +32,7 @@
 }
 
 .logoChevron {
-  color: #ffb800; /* Yellow chevron from image */
+  color: #ffb800;
   margin-right: 0.1rem;
   font-weight: 900;
 }
@@ -86,27 +86,6 @@
   transform: translateY(2px);
 }
 
-.themeToggleBtn {
-  background: none;
-  border: none;
-  color: var(--foreground);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.2rem;
-  height: 2.2rem;
-  border-radius: 50%;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-  opacity: 0.85;
-}
-
-.themeToggleBtn:hover {
-  background-color: var(--card-background);
-  opacity: 1;
-  transform: rotate(15deg);
-}
-
 .ctaBtn {
   background-color: var(--foreground);
   color: var(--background);
@@ -131,7 +110,7 @@
   transform: translateY(0);
 }
 
-/* Mobile Menu styles */
+/* Mobile Hamburger Button */
 .mobileMenuBtn {
   display: none;
   background: none;
@@ -140,6 +119,135 @@
   cursor: pointer;
 }
 
+/* ============================
+   DARK BACKDROP OVERLAY
+   ============================ */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 199;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.backdropVisible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ============================
+   MOBILE SIDEBAR DRAWER
+   ============================ */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100dvh;
+  background: #120a0e;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.6);
+  overflow-y: auto;
+}
+
+.sidebarOpen {
+  transform: translateX(0);
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.closeBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: var(--primary-red);
+  border-color: var(--primary-red);
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  flex-grow: 1;
+  gap: 0.5rem;
+}
+
+.sidebarLinksList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+.sidebarLinkItem {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebarLinkItem:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+.sidebarCtaBtn {
+  background-color: var(--primary-red);
+  color: #ffffff;
+  font-family: var(--font-title), sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin-top: auto;
+}
+
+.sidebarCtaBtn:hover {
+  background-color: #d42040;
+  transform: translateY(-2px);
+}
+
+/* ============================
+   RESPONSIVE OVERRIDES
+   ============================ */
 @media (max-width: 1024px) {
   .header {
     padding: 0 2rem;
@@ -154,16 +262,25 @@
 
 @media (max-width: 768px) {
   .linksList {
-    display: none; /* Hide standard links on mobile */
+    display: none;
+  }
+  .ctaBtn {
+    display: none; /* Hide in nav, available in sidebar */
   }
   .mobileMenuBtn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 2.4rem;
+    height: 2.4rem;
     border-radius: 8px;
-    background-color: var(--card-background);
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    transition: background-color 0.2s ease;
+  }
+  .mobileMenuBtn:hover {
+    background-color: rgba(255, 255, 255, 0.12);
   }
   .header {
     padding: 0 1.5rem;
