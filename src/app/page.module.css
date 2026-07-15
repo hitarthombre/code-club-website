@@ -115,32 +115,32 @@
   font-family: var(--font-serif), Georgia, serif;
   font-size: 4.8rem;
   font-weight: 800;
-  line-height: 1.05;
+  line-height: 1.1;
   color: var(--foreground);
   margin-bottom: 1.5rem;
-  max-width: 650px;
-  letter-spacing: -0.02em;
+  max-width: 700px;
+  letter-spacing: -0.03em;
 }
 
-/* Multi-colored teens word styling */
-.teens {
-  font-weight: 900;
-  display: inline-block;
-  white-space: nowrap;
+/* Individual word styling */
+.wordCode {
+  color: var(--foreground);
 }
 
-.t_char { color: var(--accent-pink); }
-.e1_char { color: var(--accent-purple); }
-.e2_char { color: var(--accent-green); }
-.n_char { color: var(--accent-yellow); }
-.s_char { color: var(--accent-blue); }
+.wordCollab {
+  color: var(--primary-red);
+}
+
+.wordCreate {
+  color: var(--accent-yellow);
+}
 
 .subtitle {
   font-family: var(--font-sans), sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   color: var(--text-muted);
-  max-width: 580px;
+  max-width: 520px;
   margin-bottom: 2.5rem;
   font-weight: 400;
 }

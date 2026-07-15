@@ -103,27 +103,21 @@ export default function Home() {
           <div className={styles.centerColumn}>
             {/* Main title */}
             <h1 className={styles.title}>
-              Where{" "}
-              <span className={styles.teens}>
-                <span className={styles.t_char}>t</span>
-                <span className={styles.e1_char}>e</span>
-                <span className={styles.e2_char}>e</span>
-                <span className={styles.n_char}>n</span>
-                <span className={styles.s_char}>s</span>
-              </span>{" "}
-              make cool stuff.
+              <span className={styles.wordCode}>Code.</span>{" "}
+              <span className={styles.wordCollab}>Collaborate.</span>{" "}
+              <span className={styles.wordCreate}>Create.</span>
             </h1>
 
             {/* Subheading */}
             <p className={styles.subtitle}>
-              Hack Club is the world&apos;s largest nonprofit movement of teenagers
-              making cool projects.
+              GSFC University&apos;s coding community where students learn, build,
+              and ship real projects together.
             </p>
 
             {/* GSFC University Logo */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://www.gsfcuniversity.ac.in/public/logo/02-logo.png"
+              src="https://www.gsfcuniversity.ac.in/public/logo/White1.png"
               alt="GSFC University Logo"
               className={styles.universityLogo}
             />
